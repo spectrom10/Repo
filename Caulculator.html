@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1"/>
+    <title>Calculator</title>
+    <body>
+  <style>
+    h1,h2,h3 {
+      color: var(--white);
+      text-align: center;
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-weight: bold;
+    }
+  </style>
+  <h1> Calculator </h1>
+  
+  <h3> Enjoy! </h3>
+</body>
+
+
+    <style>
+      :root {
+        --blue: #0c3761;
+        --white: #F4f4f4;
+        --gray: #434242;
+        --font-colour: #2222;
+      }
+
+      *{ 
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--blue);
+        color: var(--font-colour);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-align: 'center';
+        margin: 0;
+        padding: 0; 
+      }
+    </style>
+
+    <div id="Calculator-box">
+      <input type="text" id="display" disabled>
+      <div id="Buttons">
+        <Button>1</Button>
+        <Button>2</Button>
+        <Button>3</Button>
+        <Button>4</Button>
+
+        <Button>5</Button>
+        <Button>6</Button>
+        <Button>7</Button>
+        <Button>8</Button>
+
+
+        <Button>9</Button>
+        <Button>0</Button>
+        <Button>+</Button>
+        <Button>-</Button>
+
+        <Button>*</Button>
+        <Button>/</Button>
+        <Button>=</Button>
+        <Button>C</Button>
+
+        <Button>.</Button>
+      </div>
+    </div>
+    <style> 
+      button { 
+        background-color: var(--white);
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 40px;
+        margin: 5px; 
+        font-size: 18px;
+        font: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      #Buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 10px;
+        border-radius: 5px;
+      }
+
+      body { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;  
+      }
+    </style>
+    
+<script>
+  const buttons = document.querySelectorAll('button');
+  const display = document.getElementById('display');
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const value = button.textContent;
+      
+      if (value === 'C') {
+        display.value = '';
+      } else if (value === '=') {
+        try {
+          display.value = eval(display.value);
+        } catch (error) {
+          display.value = 'Error';
+        }
+      } else {
+        display.value += value;
+      }
+    });
+  });
+</script>
+  </head>
+</html> 
+
+<style>
+  #calculator {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    color-scheme: var(--blue);
+    background-color: var(--white);
+    border-radius: 5px; 
+    padding: 20px;
+
+  }
+
+  #display {
+    width: 100%;
+    height: 40px;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  #calculator-box {
+    background: #434242;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    width: 300px;
+    height: 380px;
+    margin: auto;
+  }
+
+
+  
+</style>
+
+
+
+
+
+
